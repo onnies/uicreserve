@@ -14,18 +14,21 @@ export default class PageOne extends Component {
     render(){
         return(
                 <View style={styles.container}>
-                  <Text onPress={this.goToPageTwo}>Reserve</Text>
-                    <View style={styles.categories}>
-                    
-                      <CategoryCard title="Camera" imageUrl="https://www.bhphotovideo.com/images/categoryImages/desktop/325x325/21008-DSLR-Cameras.jpg"/>
-                      <CategoryCard title="Camera" imageUrl="https://www.bhphotovideo.com/images/categoryImages/desktop/325x325/21008-DSLR-Cameras.jpg"/>
-                      <CategoryCard title="Camera" imageUrl="https://www.bhphotovideo.com/images/categoryImages/desktop/325x325/21008-DSLR-Cameras.jpg"/>
+                    <View style={styles.categories_container}>
+                        <Text onPress={this.goToPageTwo}>Catrgories</Text>
                       
-                      <CategoryCard title="Camera" imageUrl="https://www.bhphotovideo.com/images/categoryImages/desktop/325x325/21008-DSLR-Cameras.jpg"/>
-                      <CategoryCard title="Camera" imageUrl="https://www.bhphotovideo.com/images/categoryImages/desktop/325x325/21008-DSLR-Cameras.jpg"/>
-                      <CategoryCard title="Camera" imageUrl="https://www.bhphotovideo.com/images/categoryImages/desktop/325x325/21008-DSLR-Cameras.jpg"/>
-                    
-                    </View>
+                        <View style={styles.categories}>
+                        
+                          <CategoryCard title="Camera" imageUrl="https://www.bhphotovideo.com/images/categoryImages/desktop/325x325/21008-DSLR-Cameras.jpg"/>
+                          <CategoryCard title="Camera" imageUrl="https://www.bhphotovideo.com/images/categoryImages/desktop/325x325/21008-DSLR-Cameras.jpg"/>
+                          <CategoryCard title="Camera" imageUrl="https://www.bhphotovideo.com/images/categoryImages/desktop/325x325/21008-DSLR-Cameras.jpg"/>
+                          
+                          <CategoryCard title="Camera" imageUrl="https://www.bhphotovideo.com/images/categoryImages/desktop/325x325/21008-DSLR-Cameras.jpg"/>
+                          <CategoryCard title="Camera" imageUrl="https://www.bhphotovideo.com/images/categoryImages/desktop/325x325/21008-DSLR-Cameras.jpg"/>
+                          <CategoryCard title="Camera" imageUrl="https://www.bhphotovideo.com/images/categoryImages/desktop/325x325/21008-DSLR-Cameras.jpg"/>
+                          
+                        </View>
+                  </View>                  
                 </View>
 
         );
@@ -34,17 +37,24 @@ export default class PageOne extends Component {
 
 const styles = StyleSheet.create({
   container: {
-    flex :1,
+    //flex :1,
     marginTop:64,
-    borderWidth: 1    
+    borderWidth: 1,
+    //borderColor: 'red',
+    flexDirection: 'column',
+    
+  },
+  categories_container: {
+    //flex: 1,
+    alignItems: 'flex-start', 
+    borderWidth: 1,
   },
   categories: {   
-    flex: 1, 
+    //flex: 1, 
     flexDirection:'row',
     flexWrap: 'wrap',
-    //alignItems: 'flex-start'
+    alignItems: 'flex-start',
     justifyContent: 'space-between'
   }
-
-  });
+});
 
