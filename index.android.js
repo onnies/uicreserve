@@ -7,47 +7,31 @@
 import React, { Component } from 'react';
 import {
   AppRegistry,
-  StyleSheet,
-  Text,
-  View
 } from 'react-native';
+import { Router, Scene } from 'react-native-router-flux';
+import ReservePage from "./app/ReservePage";
+import ItemsPage from "./app/ItemsPage";
+import DetailsPage from "./app/DetailsPage";
+import NavigationDrawer from "./app/NavigationDrawer";
+import Mission from "./app/Mission";
+import History from "./app/History";
 
 export default class uicreserve extends Component {
   render() {
     return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React Native!
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit index.android.js
-        </Text>
-        <Text style={styles.instructions}>
-          Double tap R on your keyboard to reload,{'\n'}
-          Shake or press menu button for dev menu
-        </Text>
-      </View>
-    );
+      <Router>
+        <Scene key="drawer" component={NavigationDrawer} open={false} >
+          <Scene key="root">
+            <Scene key="Reserve" component={ReservePage} title="Reserve" initial={true}/>
+            <Scene key="Items" component={ItemsPage} title="Items"/>
+            <Scene key="Details" component={DetailsPage} title="Details"/>
+            <Scene key="Mission" component={Mission} title="Mission"/>
+            <Scene key="History" component={History} title="History"/>
+          </Scene>
+        </Scene>
+      </Router>
+    )
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
-});
 
 AppRegistry.registerComponent('uicreserve', () => uicreserve);
