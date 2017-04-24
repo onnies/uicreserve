@@ -24,11 +24,11 @@ const styles = StyleSheet.create({
   container: {
    borderWidth: 1,
    borderColor: "#B8B6BF", 
-    justifyContent:'center',
-    alignItems:'center',
-    width: 100,
-    height: 80,
-    margin: 5,
+   justifyContent:'center',
+   alignItems:'center',
+   width: 100,
+   height: 80,
+   margin: 5,
   },
   image: {
     width: 60,
