@@ -18,7 +18,7 @@ export default class Popular extends Component {
             <TouchableHighlight onPress={this._showDetail}>
             <View style={styles.container}>
                 <View style ={styles.thumbnail}>
-                    <Image style={styles.image} source={{uri: data.book_image}} resizeMode="contain"/>
+                    <Image style={styles.image} source={{uri: data.image}} resizeMode="contain"/>
                 </View>
                 <View style={styles.info}>
                     <Text>{data.author}</Text>

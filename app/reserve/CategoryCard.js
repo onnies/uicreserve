@@ -3,19 +3,24 @@ import {
   View,
   Text,
   Image,
-  StyleSheet
+  StyleSheet,
+  TouchableHighlight
 } from 'react-native';
 import {Actions} from 'react-native-router-flux';
 
 export default class CategoryCard extends Component {
+    
+    goToListCamera = () => Actions.ListCamera ();
+    
     render(){
         var self = this;
         return(
+          <TouchableHighlight onPress={this.goToListCamera}>
                 <View style={styles.container}>
                    <Image source={{uri: self.props.imageUrl}} style={styles.image}/>
                    <Text style={styles.subtitle}>{self.props.title}</Text>
                 </View>
-
+          </TouchableHighlight>
         );
     }
 }
@@ -33,8 +38,7 @@ const styles = StyleSheet.create({
   image: {
     width: 60,
     height: 60,
-    marginTop:3
-
+    marginTop:3,
     
   },
   subtitle: {
