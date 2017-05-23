@@ -20,6 +20,9 @@ export default class Popular extends Component {
             <View style={styles.container}>
                 <View style ={styles.thumbnail}>
                     <Image style={styles.image} source={{uri:self.props.imageUrl}} resizeMode="contain"/>
+
+                    <Image style={styles.image} source={{uri: data.image}} resizeMode="contain"/>
+
                 </View>
             <View style={styles.info}>
                     <Text style={{fontWeight:'bold'}}>{self.props.title}</Text>

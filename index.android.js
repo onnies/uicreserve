@@ -8,6 +8,8 @@ import React, { Component } from 'react';
 import {
   AppRegistry,
 } from 'react-native';
+import firebase from './firebase'
+
 import { Router, Scene } from 'react-native-router-flux';
 import ReservePage from "./app/ReservePage";
 import ItemsPage from "./app/ItemsPage";
@@ -15,6 +17,7 @@ import DetailsPage from "./app/DetailsPage";
 import NavigationDrawer from "./app/NavigationDrawer";
 import Mission from "./app/Mission";
 import History from "./app/History";
+import ListCamera from "./app/List/ListCamera";
 
 export default class uicreserve extends Component {
   render() {
@@ -27,6 +30,7 @@ export default class uicreserve extends Component {
             <Scene key="Details" component={DetailsPage} title="Details"/>
             <Scene key="Mission" component={Mission} title="Mission"/>
             <Scene key="History" component={History} title="History"/>
+            <Scene key="ListCamera" component={ListCamera} title="ListCamera"/>
           </Scene>
         </Scene>
       </Router>
