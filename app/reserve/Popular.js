@@ -4,33 +4,32 @@ import {
   Text,
   View,
   Image,
+  ListView,
   TouchableHighlight
 } from 'react-native';
 import {Actions} from 'react-native-router-flux';
 
 export default class Popular extends Component {
+
     _showDetail =()=>{
         Actions.detail({data:this.props.data});
     }
     render() {
-        var data = this.props.data;
+        var self = this;
         return (
-            <TouchableHighlight onPress={this._showDetail}>
             <View style={styles.container}>
                 <View style ={styles.thumbnail}>
-                    <Image style={styles.image} source={{uri: data.book_image}} resizeMode="contain"/>
+                    <Image style={styles.image} source={{uri:self.props.imageUrl}} resizeMode="contain"/>
                 </View>
-                <View style={styles.info}>
-                    <Text>{data.author}</Text>
-                    <Text style={{fontWeight:'bold'}}>{data.title}</Text>
+            <View style={styles.info}>
+                    <Text style={{fontWeight:'bold'}}>{self.props.title}</Text>
                 </View>
              </View>
-             </TouchableHighlight>
-    );
-  }
+                    )
+                 }
 }
+              
     
-  
 
 const styles = StyleSheet.create({
   container: {

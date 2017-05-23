@@ -9,38 +9,24 @@ import {Actions} from 'react-native-router-flux';
 import CategoryCard from './reserve/CategoryCard'
 import Popular from './reserve/Popular'
 
-var ENDPOINT = "http://api.nytimes.com/svc/books/v3/lists/hardcover-fiction?response-format=json&api-key=73b19491b83909c7e07016f4bb4644f9:2:60667290";
+//var ENDPOINT = "http://api.nytimes.com/svc/books/v3/lists/hardcover-fiction?response-format=json&api-key=73b19491b83909c7e07016f4bb4644f9:2:60667290";
 
 export default class ReservePage extends Component {
     goToItemsPage = () => Actions.Items();
     openDrawer = () => Actions.refresh({key: 'drawer', open: true});
 
     constructor(props){
-        super (props)
+        super (props);
         var ds = new ListView.DataSource({rowHasChanged:(r1,r2) => r1 !== r2});
-        this.state = {dataSource: ds.cloneWithRows([])
-        }
+        this.state = {dataSource: ds.cloneWithRows(['Item1', 'Item2', 'Item3', 'Item4', 'Item5', 'Item6', 'Item7', 'Item8', 
+               'Item9', 'Item10'])
+        };
          
     }
-    componentDidMount(){
-        this._refreshData();
-    }
-    _refreshData(){
-        fetch(ENDPOINT)
-        .then((response) => response.json())
-        .then((rjson)=>{this.setState({
-            dataSource: this.state.dataSource.cloneWithRows(rjson.results.books)
-      })
-    })
-  }
     _renderRow(data){
       return <Popular data={data}/>
       
 }
-    _showDetail(){
-        console.log('hello world');
-    }
-
 
     render(){
         return(
@@ -61,7 +47,7 @@ export default class ReservePage extends Component {
                         </View>
                    </View>
                    <Text>Popular</Text>
-                   <ListView dataSource={this.state.dataSource} renderRow={this._renderRow}/>  
+                   <Popular dataSource = {this.state.dataSource}/>  
               
                </View>
   
