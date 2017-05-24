@@ -2,20 +2,18 @@ import React, { Component } from 'react';
 import {
   StyleSheet,
   Text,
-  View,
-  Image,
-  TouchableHighlight
+  View
 } from 'react-native';
-import {Actions} from 'react-native-router-flux';
-import _ from 'lodash'
 
-export default class Popular extends Component {
+export default class uicreserve extends Component {
   render() {
+    
     return (
       <View style={styles.container}>
         <Text>
           Sorry teachers,
-          Please forgive us
+          We have try our best!
+          TT
         </Text>
       </View>
     );

@@ -128,6 +128,7 @@ const styles = StyleSheet.create({
     //flex: 1,
     alignItems: 'flex-start', 
     borderWidth: 1,
+    borderColor: '#B8B6BF',
   },
   categories: {   
     //flex: 1, 

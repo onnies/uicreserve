@@ -2,10 +2,14 @@ import React, { Component } from 'react';
 import {
   StyleSheet,
   Text,
-  View
+  View,
+  Image,
+  TouchableHighlight
 } from 'react-native';
+import {Actions} from 'react-native-router-flux';
 
-export default class ListItem extends Component {
+
+export default class CameraItem extends Component {
     _showDetail =()=>{
         Actions.detail({data:this.props.data});
     }
@@ -21,8 +25,8 @@ export default class ListItem extends Component {
                 <View style={styles.info}>
                 
                     
-                    <Text style={{fontWeight:'bold'}}>{this.props.data.name}</Text>
-                    <Text>amount: {this.props.data.amount}</Text>
+                    <Text style={{fontWeight:'bold'}}>{this.props.data.description}</Text>
+                    
                 </View>
              </View>
              </TouchableHighlight>
@@ -41,7 +45,7 @@ const styles = StyleSheet.create({
     borderColor: "#B8B6BF", 
     paddingTop:4,
     paddingHorizontal:12,
-    height:80,
+    height:80
   },
   thumbnail:{
       flex:1

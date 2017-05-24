@@ -12,6 +12,7 @@ import NavigationDrawer from "./app/NavigationDrawer";
 import Mission from "./app/Mission";
 import History from "./app/History";
 import ListCamera from "./app/List/ListCamera";
+import PopularDetail from "./app/reserve/PopularDetail";
 
 export default class uicreserve extends Component {
   render() {
@@ -24,7 +25,8 @@ export default class uicreserve extends Component {
             <Scene key="Details" component={DetailsPage} title="Details"/>
             <Scene key="Mission" component={Mission} title="Mission"/>
             <Scene key="History" component={History} title="History"/>
-            <Scene key="ListCamera" component={ListCamera} title="Camera"/>
+            <Scene key="ListCamera" component={ListCamera} title="ListCamera"/>
+            <Scene key="PopularDetail" component={PopularDetail} title="PopularDetail"/>
           </Scene>
         </Scene>
       </Router>

@@ -9,23 +9,24 @@ import {
 import {Actions} from 'react-native-router-flux';
 
 export default class Popular extends Component {
+    goToDetail = () => Actions.PopularDetail ();
     _showDetail =()=>{
         Actions.detail({data:this.props.data});
     }
     render() {
         var data = this.props.data;
-        console.log(this.props.data)
+        //console.log(this.props.data)
         return (
-            <TouchableHighlight onPress={this._showDetail}>
+            <TouchableHighlight onPress={this.goToDetail }>
             <View style={styles.container}>
                 <View style ={styles.thumbnail}>
-                    <Image style={styles.image} source={{uri: this.props.data.image}} resizeMode="contain"/>
+                    <Image style={styles.image} source={{uri:data.image}} resizeMode="contain"/>
                 </View>
                 <View style={styles.info}>
                 
                     
-                    <Text style={{fontWeight:'bold'}}>{this.props.data.name}</Text>
-                    <Text>amount: {this.props.data.amount}</Text>
+                    <Text style={{fontWeight:'bold'}}>{data.name}</Text>
+                    <Text>amount: {data.amount}</Text>
                 </View>
              </View>
              </TouchableHighlight>
