@@ -1,9 +1,3 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- * @flow
- */
-
 import React, { Component } from 'react';
 import {
   AppRegistry,
@@ -30,7 +24,7 @@ export default class uicreserve extends Component {
             <Scene key="Details" component={DetailsPage} title="Details"/>
             <Scene key="Mission" component={Mission} title="Mission"/>
             <Scene key="History" component={History} title="History"/>
-            <Scene key="ListCamera" component={ListCamera} title="ListCamera"/>
+            <Scene key="ListCamera" component={ListCamera} title="Camera"/>
           </Scene>
         </Scene>
       </Router>

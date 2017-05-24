@@ -2,13 +2,10 @@ import React, { Component } from 'react';
 import {
   StyleSheet,
   Text,
-  View,
-  Image,
-  TouchableHighlight
+  View
 } from 'react-native';
-import {Actions} from 'react-native-router-flux';
 
-export default class Popular extends Component {
+export default class ListItem extends Component {
     _showDetail =()=>{
         Actions.detail({data:this.props.data});
     }

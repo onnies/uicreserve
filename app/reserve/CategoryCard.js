@@ -10,12 +10,12 @@ import {Actions} from 'react-native-router-flux';
 
 export default class CategoryCard extends Component {
     
-    goToListCamera = () => Actions.ListCamera ();
+    goToCamera = () => Actions.ListCamera ();
     
     render(){
         var self = this;
         return(
-          <TouchableHighlight onPress={this.goToListCamera}>
+          <TouchableHighlight onPress={this.goToCamera  }>
                 <View style={styles.container}>
                    <Image source={{uri: self.props.imageUrl}} style={styles.image}/>
                    <Text style={styles.subtitle}>{self.props.title}</Text>
